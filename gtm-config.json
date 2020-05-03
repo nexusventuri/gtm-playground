@@ -1,6 +1,6 @@
 {
     "exportFormatVersion": 2,
-    "exportTime": "2020-05-03 18:18:55",
+    "exportTime": "2020-05-03 20:30:08",
     "containerVersion": {
         "path": "accounts/1234567890/containers/87654321/versions/0",
         "accountId": "1234567890",
@@ -182,6 +182,98 @@
                     "23"
                 ],
                 "tagFiringOption": "UNLIMITED",
+                "monitoringMetadata": {
+                    "type": "MAP"
+                }
+            },
+            {
+                "accountId": "1234567890",
+                "containerId": "87654321",
+                "tagId": "26",
+                "name": "Tag sequencing - Parent Tag",
+                "type": "html",
+                "parameter": [
+                    {
+                        "type": "TEMPLATE",
+                        "key": "html",
+                        "value": "<script>\n  var target = document.getElementById('tag-sequencing-parent');\n  target.classList.add('bg-success', 'bold', 'white', 'rounded');\n  target.innerHTML = 'Tag triggered';\n</script>\n"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "supportDocumentWrite",
+                        "value": "false"
+                    }
+                ],
+                "fingerprint": "1588536789444",
+                "firingTriggerId": [
+                    "25"
+                ],
+                "tagFiringOption": "ONCE_PER_EVENT",
+                "monitoringMetadata": {
+                    "type": "MAP"
+                }
+            },
+            {
+                "accountId": "1234567890",
+                "containerId": "87654321",
+                "tagId": "28",
+                "name": "Tag sequencing - Child1 Tag",
+                "type": "html",
+                "parameter": [
+                    {
+                        "type": "TEMPLATE",
+                        "key": "html",
+                        "value": "<script>\n  var target = document.getElementById('tag-sequencing-child1');\n  target.classList.add('bg-success', 'bold', 'white', 'rounded');\n  target.innerHTML = 'Tag triggered';\n</script>\n"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "supportDocumentWrite",
+                        "value": "false"
+                    }
+                ],
+                "fingerprint": "1588536968324",
+                "firingTriggerId": [
+                    "27"
+                ],
+                "setupTag": [
+                    {
+                        "tagName": "Tag sequencing - Parent Tag"
+                    }
+                ],
+                "tagFiringOption": "ONCE_PER_EVENT",
+                "monitoringMetadata": {
+                    "type": "MAP"
+                }
+            },
+            {
+                "accountId": "1234567890",
+                "containerId": "87654321",
+                "tagId": "30",
+                "name": "Tag sequencing - Child2 Tag",
+                "type": "html",
+                "parameter": [
+                    {
+                        "type": "TEMPLATE",
+                        "key": "html",
+                        "value": "<script>\n  var target = document.getElementById('tag-sequencing-child2');\n  target.classList.add('bg-success', 'bold', 'white', 'rounded');\n  target.innerHTML = 'Tag triggered';\n</script>\n"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "supportDocumentWrite",
+                        "value": "false"
+                    }
+                ],
+                "fingerprint": "1588536948941",
+                "firingTriggerId": [
+                    "29"
+                ],
+                "setupTag": [
+                    {
+                        "tagName": "Tag sequencing - Parent Tag",
+                        "stopOnSetupFailure": true
+                    }
+                ],
+                "tagFiringOption": "ONCE_PER_EVENT",
                 "monitoringMetadata": {
                     "type": "MAP"
                 }
@@ -444,6 +536,81 @@
                         ]
                     }
                 ]
+            },
+            {
+                "accountId": "1234567890",
+                "containerId": "87654321",
+                "triggerId": "25",
+                "name": "Click - Tag sequencing - Parent",
+                "type": "CLICK",
+                "filter": [
+                    {
+                        "type": "EQUALS",
+                        "parameter": [
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg0",
+                                "value": "{{attribute data-trigger}}"
+                            },
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg1",
+                                "value": "tag-sequencing-trigger-parent"
+                            }
+                        ]
+                    }
+                ],
+                "fingerprint": "1588536756752"
+            },
+            {
+                "accountId": "1234567890",
+                "containerId": "87654321",
+                "triggerId": "27",
+                "name": "Click - Tag sequencing - Child1",
+                "type": "CLICK",
+                "filter": [
+                    {
+                        "type": "EQUALS",
+                        "parameter": [
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg0",
+                                "value": "{{attribute data-trigger}}"
+                            },
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg1",
+                                "value": "tag-sequencing-trigger-child1"
+                            }
+                        ]
+                    }
+                ],
+                "fingerprint": "1588536839886"
+            },
+            {
+                "accountId": "1234567890",
+                "containerId": "87654321",
+                "triggerId": "29",
+                "name": "Click - Tag sequencing - Child2",
+                "type": "CLICK",
+                "filter": [
+                    {
+                        "type": "EQUALS",
+                        "parameter": [
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg0",
+                                "value": "{{attribute data-trigger}}"
+                            },
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg1",
+                                "value": "tag-sequencing-trigger-child2"
+                            }
+                        ]
+                    }
+                ],
+                "fingerprint": "1588536923332"
             }
         ],
         "variable": [
@@ -564,7 +731,7 @@
                 "name": "Click Element"
             }
         ],
-        "fingerprint": "1588529935105",
+        "fingerprint": "1588537808161",
         "tagManagerUrl": "https://tagmanager.google.com/#/versions/accounts/1234567890/containers/87654321/versions/0?apiLink=version"
     }
 }

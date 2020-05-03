@@ -78,6 +78,31 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       </div>
     </div>
   </div>
+
+  <h3>Example 4 - Tags sequencing</h3>
+  <p>Let's assume you want to implement multiple tags that depends on multiple events a, b like the above, but those tags all have a set up tag and you want to set up a trigger group only for the set up tag, not for all tags depending on that</p>
+  <p>An example might be asking people if they want to be tracked by vendor x. Vendor x tag would appear in multiple pages for people that consented but additional tags are set up on other events. Is it possible to set up tag dependency so only the main tag needs a tag group while all other tags will just need to include the tag correctly?</p>
+  <div class="card b-gray mb4">
+    <div class='row'>
+      <div class='tc col'>
+        <button class='btn' data-trigger='tag-sequencing-trigger-parent'>Trigger parent</button>
+      </div>
+      <div class='tc col'>
+        <button class='btn' data-trigger='tag-sequencing-trigger-child1'>Trigger child1</button>
+      </div>
+      <div class='tc col'>
+        <button class='btn' data-trigger='tag-sequencing-trigger-child2'>Trigger child2</button>
+      </div>
+    </div>
+    <div class='mt3 row'>
+      <span class='tc col' id='tag-sequencing-parent'>Parent tag</span>
+      <span class='tc col' id='tag-sequencing-child1'>Child1 tag </span>
+      <span class='tc col' id='tag-sequencing-child2'>Child2 tag </span>
+    </div>
+    <div class='tc row'>
+      <button class='mt3 btn' data-trigger='reload' data-for='tag-sequencing'>Reload</button>
+    </div>
+  </div>
   <div class='tc vh-100'>
     <div class='vc c'>Space intentionally left blank</div>
   </div>
