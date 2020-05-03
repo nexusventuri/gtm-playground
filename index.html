@@ -40,7 +40,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
   <hr class='mb3 mt4'>
 
-  <h3 id='a-or-b'>Example 1 - Tag triggered by A or B</h3>
+  <h3 id='a-or-b-title'>Example 1 - Tag triggered by A or B</h3>
   <p>Simple example, when a Tag has multiple triggers selected the tag will fire (e.g. added to the page) when either of the triggers occours.</p>
   <p>Events are in an 'OR' relationship, meaning either event can trigger the tag, from the tag page there is no way to tell gtm to change the operator to 'AND'.</p>
   <details>
@@ -62,7 +62,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
   <hr class='mb3 mt4'>
 
-  <h3 id='a-exclude-b'>Example 2 - Tag triggered by A with the exclusion of B</h3>
+  <h3 id='a-exclude-b-title'>Example 2 - Tag triggered by A with the exclusion of B</h3>
   <p>The code for the Tag will trigger if the trigger A happens but B did not occour at the same time.</p>
   <p>You can use this strategy if, for instance, you want to exclude specific tags on page load on certain countries.</p>
   <p><b>Notice that the tag fires when the "trigger A" fires but with the exclusion of "country de" or "Trigger B". If you trigger B and then trigger A the tag fires regardless</b>.</p>
@@ -87,7 +87,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
   <hr class='mb3 mt4'>
 
-  <h3 id='a-and-b'>Example 3 - Tag triggered by A and B</h3>
+  <h3 id='a-and-b-title'>Example 3 - Tag triggered by A and B</h3>
   <p>When you need two events to occour for a tag to show you have the option to use tag groups.</p>
   <p>Note that the event only triggers once when both triggers are activated, to try again press the <b>reload</b> button.</p>
   <details>
@@ -106,14 +106,14 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       </div>
       <div class='3 col'>
         <button class='btn' data-trigger='reset' data-for='a-and-b'>Reset</button>
-        <button class='btn' data-trigger='reload' data-for='a-and-b'>Reload</button>
+        <button class='btn' data-trigger='reload' data-for='a-and-b-title'>Reload</button>
       </div>
     </div>
   </div>
 
   <hr class='mb3 mt4'>
 
-  <h3 id='tag-sequencing'>Example 4 - Tags sequencing</h3>
+  <h3 id='tag-sequencing-title'>Example 4 - Tags sequencing</h3>
   <p>Let's assume you want to implement multiple tags that depends on multiple events a, b like the above, but those tags all have a set up tag and you want to set up a trigger group only for the set up tag, not for all tags depending on that.</p>
   <p>An example might be asking people if they want to be tracked by vendor x. Vendor x tag would appear in multiple pages for people that consented but additional tags are set up on other events. Is it possible to set up tag dependency so only the main tag needs a tag group while all other tags will just need to include the tag correctly?</p>
   <p>Unfortunately the answer is no. You can not use this mechanism to add extra conditions on the parent tags and leave the children tags with an easier configuration.</p>
@@ -144,7 +144,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       <span class='tc col' id='tag-sequencing-child2'>Child2 tag </span>
     </div>
     <div class='tc row'>
-      <button class='mt3 btn' data-trigger='reload' data-for='tag-sequencing'>Reload</button>
+      <button class='mt3 btn' data-trigger='reload' data-for='tag-sequencing-title'>Reload</button>
     </div>
   </div>
   <div class='tc vh-100'>
