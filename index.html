@@ -29,5 +29,20 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <div class='c'>
   <h1 id='main-title'>Welcome to the GTM playground </h1>
   <p>The goal of this page is to see how different GTM tags and events interact with each other and how to prevent/allow tags to run</p>
+
+  <h2>Example 1 - Tag triggered by A or B</h2>
+  <p>Simple example, when a Tag has multiple triggers selected the tag will fire (e.g. added to the page) when either of the events occours</p>
+  <div class="card b-gray">
+    <div class='row'>
+      <div class='col'>
+        <button class='btn' data-name='a-or-b-event-a'>Event A</button>
+        <button class='btn' data-name='a-or-b-event-b'>Event B</button>
+        <span class='ml4' id='a-or-b'>Tag did not fire</span>
+      </div>
+      <div class='1 col'>
+        <button class='btn' data-name='reset' data-for='a-or-b'>Reset</button>
+      </div>
+    </div>
+  </div>
 </div>
 </body>
