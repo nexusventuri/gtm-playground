@@ -14,7 +14,7 @@
 new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
 j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-MTKN33P');</script>
+})(window,document,'script','dataLayer','GTM-TBF3RHZ');</script>
 <!-- End Google Tag Manager -->
 
 <link href="https://fonts.googleapis.com/css?family=Nunito:300,400,700" rel="stylesheet">
@@ -24,13 +24,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
 <body class="m0">
 <!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MTKN33P" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TBF3RHZ" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
 <div class='c'>
   <h1 id='main-title'>Welcome to the GTM playground </h1>
   <p class='mb4'>The goal of this page is to see how different GTM tags and triggers interact with each other and how to prevent/allow tags to run</p>
 
-  <h2>Example 1 - Tag triggered by A or B</h2>
+  <h3>Example 1 - Tag triggered by A or B</h3>
   <p>Simple example, when a Tag has multiple triggers selected the tag will fire (e.g. added to the page) when either of the triggers occours</p>
   <div class="card b-gray mb4">
     <div class='row'>
@@ -45,7 +45,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     </div>
   </div>
 
-  <h2>Example 2 - Tag triggered by A with the exception of B</h2>
+  <h3>Example 2 - Tag triggered by A with the exception of B</h3>
   <p>The code for the Tag will trigger if the trigger A happens but B did not occour at the same time</p>
   <p>You can use this strategy if, for instance, you want to exclude specific tags on page load on certain countries</p>
   <div class="card b-gray mb4">
@@ -57,9 +57,29 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         <span class='ml4' id='a-exclude-b'>Tag did not fire</span>
       </div>
       <div class='1 col'>
-        <button class='btn' data-trigger='reload' data-for='a-exclude-b'>Reset</button>
+        <button class='btn' data-trigger='reset' data-for='a-exclude-b'>Reset</button>
       </div>
     </div>
+  </div>
+
+  <h3>Example 3 - Tag triggered by A and B</h3>
+  <p>When you need two events to occour for a tag to show you have the option to use tag groups</p>
+  <p>Note that the event only triggers once when both triggers are activated, to try again press the <b>reload</b> button</p>
+  <div class="card b-gray mb4">
+    <div class='row'>
+      <div class='col'>
+        <button class='btn' data-trigger='a-and-b-trigger-a'>Trigger A</button>
+        <button class='btn' data-trigger='a-and-b-trigger-b'>Trigger B</button>
+        <span class='ml4' id='a-and-b'>Tag did not fire</span>
+      </div>
+      <div class='3 col'>
+        <button class='btn' data-trigger='reset' data-for='a-and-b'>Reset</button>
+        <button class='btn' data-trigger='reload' data-for='a-and-b'>Reload</button>
+      </div>
+    </div>
+  </div>
+  <div class='tc vh-100'>
+    <div class='vc c'>Space intentionally left blank</div>
   </div>
 </div>
 </body>
