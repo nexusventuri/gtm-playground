@@ -6,6 +6,8 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 <title>GTM playground</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ajusa/lit@latest/dist/lit.css" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ajusa/lit@latest/dist/util.css" />
 
 <!-- Google Tag Manager -->
 <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -17,8 +19,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
 <link href="https://fonts.googleapis.com/css?family=Nunito:300,400,700" rel="stylesheet">
 <!-- Link to your stylesheet here -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ajusa/lit@latest/dist/lit.css" />
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ajusa/lit@latest/dist/util.css" />
 <!-- Place this tag in your head or just before your close body tag. -->
 </head>
 
@@ -28,19 +28,36 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <!-- End Google Tag Manager (noscript) -->
 <div class='c'>
   <h1 id='main-title'>Welcome to the GTM playground </h1>
-  <p>The goal of this page is to see how different GTM tags and events interact with each other and how to prevent/allow tags to run</p>
+  <p class='mb4'>The goal of this page is to see how different GTM tags and triggers interact with each other and how to prevent/allow tags to run</p>
 
   <h2>Example 1 - Tag triggered by A or B</h2>
-  <p>Simple example, when a Tag has multiple triggers selected the tag will fire (e.g. added to the page) when either of the events occours</p>
-  <div class="card b-gray">
+  <p>Simple example, when a Tag has multiple triggers selected the tag will fire (e.g. added to the page) when either of the triggers occours</p>
+  <div class="card b-gray mb4">
     <div class='row'>
       <div class='col'>
-        <button class='btn' data-name='a-or-b-event-a'>Event A</button>
-        <button class='btn' data-name='a-or-b-event-b'>Event B</button>
+        <button class='btn' data-trigger='a-or-b-trigger-a'>Trigger A</button>
+        <button class='btn' data-trigger='a-or-b-trigger-b'>Trigger B</button>
         <span class='ml4' id='a-or-b'>Tag did not fire</span>
       </div>
       <div class='1 col'>
-        <button class='btn' data-name='reset' data-for='a-or-b'>Reset</button>
+        <button class='btn' data-trigger='reset' data-for='a-or-b'>Reset</button>
+      </div>
+    </div>
+  </div>
+
+  <h2>Example 2 - Tag triggered by A with the exception of B</h2>
+  <p>The code for the Tag will trigger if the trigger A happens but B did not occour at the same time</p>
+  <p>You can use this strategy if, for instance, you want to exclude specific tags on page load on certain countries</p>
+  <div class="card b-gray mb4">
+    <div class='row'>
+      <div class='col'>
+        <button class='btn' data-trigger='a-exclude-b-trigger-a'>Trigger A</button>
+        <button class='btn' data-trigger='a-exclude-b-trigger-a' data-country='de'>Trigger A country de</button>
+        <button class='btn' data-trigger='a-exclude-b-trigger-b'>Trigger B</button>
+        <span class='ml4' id='a-exclude-b'>Tag did not fire</span>
+      </div>
+      <div class='1 col'>
+        <button class='btn' data-trigger='reload' data-for='a-exclude-b'>Reset</button>
       </div>
     </div>
   </div>
