@@ -28,16 +28,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <div class='c'>
   <div>
     <h1 id='main-title'>Welcome to the GTM playground </h1>
-    <p>The goal of this page is to see how different GTM tags and triggers interact with each other and how to prevent/allow tags to run</p>
-    <p>I wanted to create a couple of examples to understand how different events can affect tags from firing and what options does GTM provide</p>
-    <p>Just to be clear: the naming convention and the way tags are set up, the code that is in the tag itself are <b>not</b> what I would generally suggest. The examples here are purely to explore different solutions around tag triggering options GTM provides</p>
-    <p>You can download the set up for GTM using the <a href='gtm-config.json'>link here</a> and loading the configuration by:
-      <ul>
-        <li>Creating a new container on GTM</li>
-        <li>Going on the Admin section of the container</li>
-        <li>Clicking on import container and loading the file</li>
-      </ul>
-    </p>
+    <p>The goal of this page is to see how different GTM tags and triggers interact with each other and how to prevent/allow tags to run.</p>
+    <p>I wanted to create a couple of examples to understand how different events can affect tags from firing and what options does GTM provide.</p>
+    <p>Just to be clear: the naming convention and the way tags are set up, the code that is in the tag itself are <b>not</b> what I would generally suggest. The examples here are purely to explore different solutions around tag triggering options GTM provides.</p>
+    <p>If you want to play around with this page you can find more info on how to set it up on the <a href='https://github.com/nexusventuri/gtm-playground/'>project page</a>.</p>
     <details>
       <summary>Show GTM screenshot</summary>
       <img style='width: 100%' src='images/import_container.png' />
@@ -47,8 +41,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   <hr class='mb3 mt4'>
 
   <h3 id='a-or-b'>Example 1 - Tag triggered by A or B</h3>
-  <p>Simple example, when a Tag has multiple triggers selected the tag will fire (e.g. added to the page) when either of the triggers occours</p>
-  <p>Events are in an 'OR' relationship, meaning either event can trigger the tag, from the tag page there is no way to tell gtm to change the operator to 'AND'</p>
+  <p>Simple example, when a Tag has multiple triggers selected the tag will fire (e.g. added to the page) when either of the triggers occours.</p>
+  <p>Events are in an 'OR' relationship, meaning either event can trigger the tag, from the tag page there is no way to tell gtm to change the operator to 'AND'.</p>
   <details>
     <summary>Show GTM tag set up</summary>
     <img style='width: 100%' src='images/a-or-b-tag.png' />
@@ -69,9 +63,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   <hr class='mb3 mt4'>
 
   <h3 id='a-exclude-b'>Example 2 - Tag triggered by A with the exclusion of B</h3>
-  <p>The code for the Tag will trigger if the trigger A happens but B did not occour at the same time</p>
-  <p>You can use this strategy if, for instance, you want to exclude specific tags on page load on certain countries</p>
-  <p><b>Notice that the tag fires when the "trigger A" fires but with the exclusion of "country de" or "Trigger B". If you trigger B and then trigger A the tag fires regardless</b></p>
+  <p>The code for the Tag will trigger if the trigger A happens but B did not occour at the same time.</p>
+  <p>You can use this strategy if, for instance, you want to exclude specific tags on page load on certain countries.</p>
+  <p><b>Notice that the tag fires when the "trigger A" fires but with the exclusion of "country de" or "Trigger B". If you trigger B and then trigger A the tag fires regardless</b>.</p>
   <details>
     <summary>Show GTM tag set up</summary>
     You can see at the bottom of the tag the two exclusions
@@ -94,11 +88,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   <hr class='mb3 mt4'>
 
   <h3 id='a-and-b'>Example 3 - Tag triggered by A and B</h3>
-  <p>When you need two events to occour for a tag to show you have the option to use tag groups</p>
-  <p>Note that the event only triggers once when both triggers are activated, to try again press the <b>reload</b> button</p>
+  <p>When you need two events to occour for a tag to show you have the option to use tag groups.</p>
+  <p>Note that the event only triggers once when both triggers are activated, to try again press the <b>reload</b> button.</p>
   <details>
     <summary>Show GTM tag set up</summary>
-    The tag set up is simple, just a trigger would fire the tag:
+    <p>The tag set up is simple, just a trigger would fire the tag:</p>
     <img style='width: 100%' src='images/a-and-b-tag.png' />
     <p>However instead of a normal trigger I use a trigger group, which is a conjunction of two triggers in an AND relationship:</p>
     <img style='width: 100%' src='images/a-and-b-trigger-group.png' />
@@ -120,9 +114,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   <hr class='mb3 mt4'>
 
   <h3 id='tag-sequencing'>Example 4 - Tags sequencing</h3>
-  <p>Let's assume you want to implement multiple tags that depends on multiple events a, b like the above, but those tags all have a set up tag and you want to set up a trigger group only for the set up tag, not for all tags depending on that</p>
+  <p>Let's assume you want to implement multiple tags that depends on multiple events a, b like the above, but those tags all have a set up tag and you want to set up a trigger group only for the set up tag, not for all tags depending on that.</p>
   <p>An example might be asking people if they want to be tracked by vendor x. Vendor x tag would appear in multiple pages for people that consented but additional tags are set up on other events. Is it possible to set up tag dependency so only the main tag needs a tag group while all other tags will just need to include the tag correctly?</p>
-  <p>Unfortunately the answer is no. You can not use this mechanism to add extra conditions on the parent tags and leave the children tags with an easier configuration</p>
+  <p>Unfortunately the answer is no. You can not use this mechanism to add extra conditions on the parent tags and leave the children tags with an easier configuration.</p>
   <details>
     <summary>Show GTM tag set up</summary>
     <p>The parent tag has a rule to trigger when the Parent trigger fires, but when the firing conditions for the childrens are met the parent triggers regardless:<p>
@@ -154,7 +148,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     </div>
   </div>
   <div class='tc vh-100'>
-    <div class='vc c'>Space intentionally left blank</div>
+    <div class='vc c'>Space intentionally left blank.</div>
+    <!-- Yeah if you have GTM in debugging mode scrolling gets hard remove the above and you'll thank me :D -->
   </div>
 </div>
 </body>
