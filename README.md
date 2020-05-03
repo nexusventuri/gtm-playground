@@ -7,3 +7,6 @@ https://www.npmjs.com/package/http-server
 
 and in the project folder run 
 `http-server .`
+
+
+If you want to load the test gtm environment, load the gtm-config.json file in an empty GTM container
