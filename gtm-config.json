@@ -1,0 +1,570 @@
+{
+    "exportFormatVersion": 2,
+    "exportTime": "2020-05-03 18:18:55",
+    "containerVersion": {
+        "path": "accounts/1234567890/containers/87654321/versions/0",
+        "accountId": "1234567890",
+        "containerId": "87654321",
+        "containerVersionId": "0",
+        "container": {
+            "path": "accounts/1234567890/containers/87654321",
+            "accountId": "1234567890",
+            "containerId": "87654321",
+            "name": "test_gtm",
+            "publicId": "GTM-MTKN33P",
+            "usageContext": [
+                "WEB"
+            ],
+            "fingerprint": "1588508018891",
+            "tagManagerUrl": "https://tagmanager.google.com/#/container/accounts/1234567890/containers/87654321/workspaces?apiLink=container"
+        },
+        "tag": [
+            {
+                "accountId": "1234567890",
+                "containerId": "87654321",
+                "tagId": "4",
+                "name": "Show GTM loaded",
+                "type": "html",
+                "parameter": [
+                    {
+                        "type": "TEMPLATE",
+                        "key": "html",
+                        "value": "<script>\n  var s = document.createElement('span')\n  s.classList.add('bg-success', 'bold', 'white', 'ph1', 'rounded')\n  s.innerHTML = 'GTM loaded!'\n  \n  document.getElementById('main-title').appendChild(s);\n</script>"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "supportDocumentWrite",
+                        "value": "false"
+                    }
+                ],
+                "fingerprint": "1588509450503",
+                "firingTriggerId": [
+                    "3"
+                ],
+                "tagFiringOption": "ONCE_PER_EVENT",
+                "monitoringMetadata": {
+                    "type": "MAP"
+                }
+            },
+            {
+                "accountId": "1234567890",
+                "containerId": "87654321",
+                "tagId": "9",
+                "name": "A or B Example",
+                "type": "html",
+                "parameter": [
+                    {
+                        "type": "TEMPLATE",
+                        "key": "html",
+                        "value": "<script>\n  var target = document.getElementById('a-or-b');\n  target.classList.add('bg-success', 'bold', 'white', 'rounded');\n  target.innerHTML = 'Tag triggered';\n</script>"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "supportDocumentWrite",
+                        "value": "false"
+                    }
+                ],
+                "fingerprint": "1588524895793",
+                "firingTriggerId": [
+                    "7",
+                    "8"
+                ],
+                "tagFiringOption": "ONCE_PER_EVENT",
+                "monitoringMetadata": {
+                    "type": "MAP"
+                }
+            },
+            {
+                "accountId": "1234567890",
+                "containerId": "87654321",
+                "tagId": "12",
+                "name": "Reset button",
+                "type": "html",
+                "parameter": [
+                    {
+                        "type": "TEMPLATE",
+                        "key": "html",
+                        "value": "<script>\n  var target = document.getElementById('{{attribute data-for}}');\n  target.classList.remove('bg-success', 'bold', 'white', 'rounded');\n  target.innerHTML = 'Tag did not fire';\n</script>"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "supportDocumentWrite",
+                        "value": "false"
+                    }
+                ],
+                "fingerprint": "1588524970013",
+                "firingTriggerId": [
+                    "11"
+                ],
+                "tagFiringOption": "ONCE_PER_EVENT",
+                "monitoringMetadata": {
+                    "type": "MAP"
+                }
+            },
+            {
+                "accountId": "1234567890",
+                "containerId": "87654321",
+                "tagId": "16",
+                "name": "A exclude B Example",
+                "type": "html",
+                "parameter": [
+                    {
+                        "type": "TEMPLATE",
+                        "key": "html",
+                        "value": "<script>\n  var target = document.getElementById('a-exclude-b');\n  target.classList.add('bg-success', 'bold', 'white', 'rounded');\n  target.innerHTML = 'Tag triggered';\n</script>"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "supportDocumentWrite",
+                        "value": "false"
+                    }
+                ],
+                "fingerprint": "1588527902957",
+                "firingTriggerId": [
+                    "14"
+                ],
+                "blockingTriggerId": [
+                    "15",
+                    "20"
+                ],
+                "tagFiringOption": "ONCE_PER_EVENT",
+                "monitoringMetadata": {
+                    "type": "MAP"
+                }
+            },
+            {
+                "accountId": "1234567890",
+                "containerId": "87654321",
+                "tagId": "18",
+                "name": "Reload button",
+                "type": "html",
+                "parameter": [
+                    {
+                        "type": "TEMPLATE",
+                        "key": "html",
+                        "value": "<script>\n  location.reload();\n</script>"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "supportDocumentWrite",
+                        "value": "false"
+                    }
+                ],
+                "fingerprint": "1588526868601",
+                "firingTriggerId": [
+                    "17"
+                ],
+                "tagFiringOption": "ONCE_PER_EVENT",
+                "monitoringMetadata": {
+                    "type": "MAP"
+                }
+            },
+            {
+                "accountId": "1234567890",
+                "containerId": "87654321",
+                "tagId": "24",
+                "name": "A and B Example",
+                "type": "html",
+                "parameter": [
+                    {
+                        "type": "TEMPLATE",
+                        "key": "html",
+                        "value": "<script>\n  var target = document.getElementById('a-and-b');\n  target.classList.add('bg-success', 'bold', 'white', 'rounded');\n  target.innerHTML = 'Tag triggered';\n</script>"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "supportDocumentWrite",
+                        "value": "false"
+                    }
+                ],
+                "fingerprint": "1588529610172",
+                "firingTriggerId": [
+                    "23"
+                ],
+                "tagFiringOption": "UNLIMITED",
+                "monitoringMetadata": {
+                    "type": "MAP"
+                }
+            }
+        ],
+        "trigger": [
+            {
+                "accountId": "1234567890",
+                "containerId": "87654321",
+                "triggerId": "3",
+                "name": "Page view",
+                "type": "PAGEVIEW",
+                "fingerprint": "1588508827796"
+            },
+            {
+                "accountId": "1234567890",
+                "containerId": "87654321",
+                "triggerId": "7",
+                "name": "Click - A or B - Trigger A",
+                "type": "CLICK",
+                "filter": [
+                    {
+                        "type": "EQUALS",
+                        "parameter": [
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg0",
+                                "value": "{{attribute data-trigger}}"
+                            },
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg1",
+                                "value": "a-or-b-trigger-a"
+                            }
+                        ]
+                    }
+                ],
+                "fingerprint": "1588527769485"
+            },
+            {
+                "accountId": "1234567890",
+                "containerId": "87654321",
+                "triggerId": "8",
+                "name": "Click - A or B - Trigger B",
+                "type": "CLICK",
+                "filter": [
+                    {
+                        "type": "EQUALS",
+                        "parameter": [
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg0",
+                                "value": "{{attribute data-trigger}}"
+                            },
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg1",
+                                "value": "a-or-b-trigger-b"
+                            }
+                        ]
+                    }
+                ],
+                "fingerprint": "1588527760720"
+            },
+            {
+                "accountId": "1234567890",
+                "containerId": "87654321",
+                "triggerId": "11",
+                "name": "Click - Reset button",
+                "type": "CLICK",
+                "filter": [
+                    {
+                        "type": "EQUALS",
+                        "parameter": [
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg0",
+                                "value": "{{attribute data-trigger}}"
+                            },
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg1",
+                                "value": "reset"
+                            }
+                        ]
+                    }
+                ],
+                "fingerprint": "1588525292739"
+            },
+            {
+                "accountId": "1234567890",
+                "containerId": "87654321",
+                "triggerId": "14",
+                "name": "Click - A exclude B - Trigger A",
+                "type": "CLICK",
+                "filter": [
+                    {
+                        "type": "EQUALS",
+                        "parameter": [
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg0",
+                                "value": "{{attribute data-trigger}}"
+                            },
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg1",
+                                "value": "a-exclude-b-trigger-a"
+                            }
+                        ]
+                    }
+                ],
+                "fingerprint": "1588527791735"
+            },
+            {
+                "accountId": "1234567890",
+                "containerId": "87654321",
+                "triggerId": "15",
+                "name": "Click - A exclude B - Trigger B",
+                "type": "CLICK",
+                "filter": [
+                    {
+                        "type": "EQUALS",
+                        "parameter": [
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg0",
+                                "value": "{{attribute data-trigger}}"
+                            },
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg1",
+                                "value": "a-exclude-b-trigger-b"
+                            }
+                        ]
+                    }
+                ],
+                "fingerprint": "1588527782211"
+            },
+            {
+                "accountId": "1234567890",
+                "containerId": "87654321",
+                "triggerId": "17",
+                "name": "Click - Reload button",
+                "type": "CLICK",
+                "filter": [
+                    {
+                        "type": "EQUALS",
+                        "parameter": [
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg0",
+                                "value": "{{attribute data-trigger}}"
+                            },
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg1",
+                                "value": "reload"
+                            }
+                        ]
+                    }
+                ],
+                "fingerprint": "1588526822978"
+            },
+            {
+                "accountId": "1234567890",
+                "containerId": "87654321",
+                "triggerId": "20",
+                "name": "Click - A exclude B - Country de",
+                "type": "CLICK",
+                "filter": [
+                    {
+                        "type": "EQUALS",
+                        "parameter": [
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg0",
+                                "value": "{{attribute data-country}}"
+                            },
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg1",
+                                "value": "de"
+                            }
+                        ]
+                    }
+                ],
+                "fingerprint": "1588527882185"
+            },
+            {
+                "accountId": "1234567890",
+                "containerId": "87654321",
+                "triggerId": "21",
+                "name": "Click - A and B - Trigger A",
+                "type": "CLICK",
+                "filter": [
+                    {
+                        "type": "EQUALS",
+                        "parameter": [
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg0",
+                                "value": "{{attribute data-trigger}}"
+                            },
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg1",
+                                "value": "a-and-b-trigger-a"
+                            }
+                        ]
+                    }
+                ],
+                "fingerprint": "1588529037517"
+            },
+            {
+                "accountId": "1234567890",
+                "containerId": "87654321",
+                "triggerId": "22",
+                "name": "Click - A and B - Trigger B",
+                "type": "CLICK",
+                "filter": [
+                    {
+                        "type": "EQUALS",
+                        "parameter": [
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg0",
+                                "value": "{{attribute data-trigger}}"
+                            },
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg1",
+                                "value": "a-and-b-trigger-b"
+                            }
+                        ]
+                    }
+                ],
+                "fingerprint": "1588529058807"
+            },
+            {
+                "accountId": "1234567890",
+                "containerId": "87654321",
+                "triggerId": "23",
+                "name": "Click - A and B - Trigger Group",
+                "type": "TRIGGER_GROUP",
+                "fingerprint": "1588529136029",
+                "parameter": [
+                    {
+                        "type": "LIST",
+                        "key": "triggerIds",
+                        "list": [
+                            {
+                                "type": "TRIGGER_REFERENCE",
+                                "value": "21"
+                            },
+                            {
+                                "type": "TRIGGER_REFERENCE",
+                                "value": "22"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "variable": [
+            {
+                "accountId": "1234567890",
+                "containerId": "87654321",
+                "variableId": "10",
+                "name": "attribute data-for",
+                "type": "v",
+                "parameter": [
+                    {
+                        "type": "INTEGER",
+                        "key": "dataLayerVersion",
+                        "value": "2"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "setDefaultValue",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "name",
+                        "value": "gtm.element.dataset.for"
+                    }
+                ],
+                "fingerprint": "1588525184366",
+                "formatValue": {}
+            },
+            {
+                "accountId": "1234567890",
+                "containerId": "87654321",
+                "variableId": "13",
+                "name": "attribute data-trigger",
+                "type": "v",
+                "parameter": [
+                    {
+                        "type": "INTEGER",
+                        "key": "dataLayerVersion",
+                        "value": "2"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "setDefaultValue",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "name",
+                        "value": "gtm.element.dataset.trigger"
+                    }
+                ],
+                "fingerprint": "1588527447997",
+                "formatValue": {}
+            },
+            {
+                "accountId": "1234567890",
+                "containerId": "87654321",
+                "variableId": "19",
+                "name": "attribute data-country",
+                "type": "v",
+                "parameter": [
+                    {
+                        "type": "INTEGER",
+                        "key": "dataLayerVersion",
+                        "value": "2"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "setDefaultValue",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "name",
+                        "value": "gtm.element.dataset.country"
+                    }
+                ],
+                "fingerprint": "1588527597180",
+                "formatValue": {}
+            }
+        ],
+        "builtInVariable": [
+            {
+                "accountId": "1234567890",
+                "containerId": "87654321",
+                "type": "PAGE_URL",
+                "name": "Page URL"
+            },
+            {
+                "accountId": "1234567890",
+                "containerId": "87654321",
+                "type": "PAGE_HOSTNAME",
+                "name": "Page Hostname"
+            },
+            {
+                "accountId": "1234567890",
+                "containerId": "87654321",
+                "type": "PAGE_PATH",
+                "name": "Page Path"
+            },
+            {
+                "accountId": "1234567890",
+                "containerId": "87654321",
+                "type": "REFERRER",
+                "name": "Referrer"
+            },
+            {
+                "accountId": "1234567890",
+                "containerId": "87654321",
+                "type": "EVENT",
+                "name": "Event"
+            },
+            {
+                "accountId": "1234567890",
+                "containerId": "87654321",
+                "type": "CLICK_ELEMENT",
+                "name": "Click Element"
+            }
+        ],
+        "fingerprint": "1588529935105",
+        "tagManagerUrl": "https://tagmanager.google.com/#/versions/accounts/1234567890/containers/87654321/versions/0?apiLink=version"
+    }
+}
