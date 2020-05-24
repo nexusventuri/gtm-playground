@@ -1,0 +1,95 @@
+{
+    "exportFormatVersion": 2,
+    "exportTime": "2020-05-24 18:08:56",
+    "containerVersion": {
+        "path": "accounts/1234567890/containers/87654321/versions/0",
+        "accountId": "1234567890",
+        "containerId": "87654321",
+        "containerVersionId": "0",
+        "container": {
+            "path": "accounts/1234567890/containers/87654321",
+            "accountId": "1234567890",
+            "containerId": "87654321",
+            "name": "Basic configuration",
+            "publicId": "GTM-TBF3RHZ",
+            "usageContext": [
+                "WEB"
+            ],
+            "fingerprint": "1589109469330",
+            "tagManagerUrl": "https://tagmanager.google.com/#/container/accounts/1234567890/containers/87654321/workspaces?apiLink=container"
+        },
+        "tag": [
+            {
+                "accountId": "1234567890",
+                "containerId": "87654321",
+                "tagId": "45",
+                "name": "Show GTM loaded",
+                "type": "html",
+                "parameter": [
+                    {
+                        "type": "TEMPLATE",
+                        "key": "html",
+                        "value": "<script>\n  var s = document.createElement('span')\n  s.classList.add('bg-success', 'bold', 'white', 'ph1', 'rounded')\n  s.innerHTML = 'GTM loaded!'\n  \n  document.getElementById('main-title').appendChild(s);\n</script>"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "supportDocumentWrite",
+                        "value": "false"
+                    }
+                ],
+                "fingerprint": "1589109957358",
+                "firingTriggerId": [
+                    "44"
+                ],
+                "tagFiringOption": "ONCE_PER_EVENT",
+                "monitoringMetadata": {
+                    "type": "MAP"
+                }
+            }
+        ],
+        "trigger": [
+            {
+                "accountId": "1234567890",
+                "containerId": "87654321",
+                "triggerId": "44",
+                "name": "Page view",
+                "type": "PAGEVIEW",
+                "fingerprint": "1589109867095"
+            }
+        ],
+        "builtInVariable": [
+            {
+                "accountId": "1234567890",
+                "containerId": "87654321",
+                "type": "PAGE_URL",
+                "name": "Page URL"
+            },
+            {
+                "accountId": "1234567890",
+                "containerId": "87654321",
+                "type": "PAGE_HOSTNAME",
+                "name": "Page Hostname"
+            },
+            {
+                "accountId": "1234567890",
+                "containerId": "87654321",
+                "type": "PAGE_PATH",
+                "name": "Page Path"
+            },
+            {
+                "accountId": "1234567890",
+                "containerId": "87654321",
+                "type": "REFERRER",
+                "name": "Referrer"
+            },
+            {
+                "accountId": "1234567890",
+                "containerId": "87654321",
+                "type": "EVENT",
+                "name": "Event"
+            }
+        ],
+        "fingerprint": "1590343736630",
+        "tagManagerUrl": "https://tagmanager.google.com/#/versions/accounts/1234567890/containers/87654321/versions/0?apiLink=version"
+    }
+}

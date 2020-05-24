@@ -10,7 +10,7 @@
             "path": "accounts/1234567890/containers/87654321",
             "accountId": "1234567890",
             "containerId": "87654321",
-            "name": "test_gtm",
+            "name": "Advanced configuration",
             "publicId": "GTM-MTKN33P",
             "usageContext": [
                 "WEB"

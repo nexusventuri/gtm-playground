@@ -6,4 +6,4 @@ if [[ -z "$1" ]]; then
   exit 1
 fi
 
-sed -i "s/GTM-[^'\"]*\(['\"]\)/$1\1/g" index.html
+sed -i "s/GTM-[^'\"]*\(['\"]\)/$1\1/g" _layouts/default.html
