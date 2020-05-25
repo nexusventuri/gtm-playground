@@ -16,5 +16,139 @@ gtm_tag: GTM-TBF3RHZ
     </ul>
     Let's have a look at those concepts
   </p>
+</div>
 
+<hr class='mb3 mt4'>
+
+<h3>Tags</h3>
+<p>Let's imagine you have a third party script you want to include in your site, whether it's some javascript code or just an image tag loading a 'pixel'; You can also run some javascript you wrote yourself just to test how GTM works (this is what I'm doing)</p>
+<p>To do so you can just add a tag. for instance the tag to show 'GTM loaded' above just uses this code:</p>
+<img class='screenshot' src='images/gtm-loaded-tag.png' />
+<p>That tag adds an extra element to html tags that have the id 'main-title' the tag would show 'GTM loaded!' text</p>
+<p>But we know what to load... We don't know when to load it. In order to tell GTM <b>*when*</b> to load a tag we need to have triggers.</p>
+
+<hr class='mb3 mt4'>
+
+<h3>Triggers</h3>
+<p>The tag above works on a simple concept, when the page is loaded we load the tag. The set up for the GTM Loaded tag looks like this:</p>
+<img class='screenshot' src='images/gtm-loaded-trigger.png' />
+<p>But what if we want to have something more sophisticated? e.g. when a button is clicked?</p>
+<p>You can define different trigger based on your needs, let's assume you want to have a trigger when a button is clicked</p>
+<div class="card b-info">
+  <div class='row'>
+    <div class='col'>
+      <button class='btn'>Click me</button>
+      <span class='ml4 basic-tag'>Tag did not fire</span>
+    </div>
+    <div class='1 col'>
+      <button class='btn' data-trigger='reset' data-for='basic-tag'>Reset</button>
+    </div>
+  </div>
+</div>
+<details>
+  <summary>Show GTM tag set up</summary>
+  <p>The code for the tag simply changes the content of any html element with a class 'basic-tag' when the button is clicked</p>
+  <img style='width: 100%' src='images/basic-tag-tag.png' />
+  <p>The trigger for that tag fires every time a button is clicked</p>
+  <img style='width: 100%' src='images/basic-tag-trigger.png' />
+</details>
+<p>TODO: Add example with datalayer push custom event</p>
+
+<hr class='mb3 mt4'>
+
+<h3 id='variables'>Variables</h3>
+<p>You can imagine the trigger for the example above being 'too generic' meaning that any click on button would end up triggering any tag.</p>
+<p>To abvoid that you tell GTM to run the trigger only on specific data attributes, so you don't end up firing the tag too often.</p>
+<div class="card b-info">
+  <div class='row'>
+    <div class='6 col tc'>
+      <button class='btn'>Normal button</button>
+      <div class='mt3 basic-tag'>Generic button tag</div>
+    </div>
+    <div class='6 col tc'>
+      <button class='btn' data-trigger='button-with-trigger'>Button with data trigger</button>
+      <div class='mt3 button-with-trigger'>Specific button tag</div>
+    </div>
+  </div>
+  <div class='tc row'>
+    <button class='mt3 btn' data-trigger='reload' data-for='variables'>Reload</button>
+  </div>
+</div>
+<details>
+  <summary>Show GTM tag set up</summary>
+</details>
+
+<hr class='mb3 mt4'>
+
+<h3>Variables and triggers set up via javascript</h3>
+<p>Up until now we saw how to set up variables and triggers set up using what is already available on the page. It's also possible to have triggers fired via javascript or variable set up via javascript on the page. This is particularly useful to get data across multiple tags or trigger events on single page applications.</p>
+
+<h4>Triggers fired via javascript events</h4>
+<p>If you want, for instance fire triggers on single page apps you can use the following:</p>
+
+<script>
+var button = document.querySelector('.javascript-event');
+button.onclick(function() {
+  dataLayer.push({'event': 'javascript-event-example'});
+})
+</script>
+
+<pre>
+<code>
+var button = document.querySelector('.javascript-event');
+button.onclick(function() {
+  dataLayer.push({'event': 'javascript-event-example'}); // This is the important bit, you can use on single page apps.
+})
+</code>
+</pre>
+
+<h4>Variables set up through javascript</h4>
+<p>Variables can also be provided to gtm by adding javascript code in the page and passing the values to the data layer, for example by adding this code</p>
+<script>
+window.dataLayer = window.dataLayer || [];
+dataLayer.push({text: 'Text has been changed'})
+</script>
+<pre>
+<code>
+window.dataLayer = window.dataLayer || [];
+dataLayer.push({text: 'Text has been changed'})
+</code>
+</pre>
+<p>You can then use, after creating a variable on GTM the value for the text field in the tag code</p>
+<pre>
+<code>
+var target = document.querySelector('.datalayer-variable-example');
+target.classList.add('bg-success', 'bold', 'white', 'rounded');
+target.innerHTML = '{{ "{{Datalayer text"}}}}';
+</code>
+</pre>
+<p>Here the example:</p>
+
+<div class="card b-info">
+  <div class='row'>
+    <div class='col'>
+      <button class='btn' data-trigger='button-for-datalayer-example'>Click me</button>
+      <span class='ml4 datalayer-variable-example'>Tag did not fire</span>
+    </div>
+    <div class='1 col'>
+      <button class='btn' data-trigger='reset' data-for='datalayer-variable-example'>Reset</button>
+    </div>
+  </div>
+</div>
+<details>
+  <summary>Show GTM tag set up</summary>
+</details>
+
+<p>Variables provide a way to tell GTM what to expect from your website. GTM uses the variables to declare to validate your tags and your scripts; in this way you can avoid most common issues and keeps tags consistent when you decide to rename your variables.</p>
+
+<hr class='mb3 mt4'>
+
+<h3>Conclusion</h3>
+<p>We looked into the main concepts used in TagManager. Given the goal of GTM is to serve tags on your site you need to answer what (I.E. tags), when (I.E. triggers), how (I.E. variables).
+The code provided is very clunky, and it was set up only for this demo, in fact, I suggest you to often look at your setup and look for opportunities for refactorings as the set up can easily get out of hand.
+That aside I suggest for you to look at the details of different tags/triggers/variables to see what fits your needs.
+</p>
+<div class='tc vh-100'>
+  <div class='vc c'>Space intentionally left blank.</div>
+  <!-- Yeah if you have GTM in debugging mode scrolling gets hard remove the above... and you'll thank me :D -->
 </div>
